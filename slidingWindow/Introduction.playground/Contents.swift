@@ -1,6 +1,6 @@
 import UIKit
 
-var greeting = "Hello, playground"
+var greeting = "Introduction"
 
 
 func findAverageSubArrays(_ nums: [Int], k: Int) -> [Double] {
@@ -33,7 +33,7 @@ func findAverageSubArrays(arr: [Int], k: Int) -> [Double] {
         windowSum += Double(arr[windowEnd]) // add the next element
         
         // slide the window , we don't need to slide if we've not hit the required window size of K
-        if windowEnd == k - 1 {
+        if windowEnd >= k - 1 {
             result.append(windowSum / Double(k))
             windowSum -= Double(arr[windowStart])
             windowStart += 1
