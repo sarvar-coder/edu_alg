@@ -13,20 +13,19 @@ func findLongestSubString(_ k: Int, _ string: String) -> Int {
     var charFrequency = [Character: Int]()
     
     var tempStr = string.map { $0 }
-    print(tempStr)
-    
+  
     
     for windowEnd in 0...(tempStr.count - 1) {
 
         let rightChar = tempStr[windowEnd]
         
         if !charFrequency.keys.contains(rightChar) {
-            print(rightChar, "right")
+        
             charFrequency[rightChar] = 0
         }
-        print(rightChar)
+   
         charFrequency[rightChar]! += 1
-        print(charFrequency)
+    
         while charFrequency.keys.count > k {
             let leftChar = tempStr[windowStart]
             
@@ -39,7 +38,7 @@ func findLongestSubString(_ k: Int, _ string: String) -> Int {
         }
         
         maxLength = max(maxLength, windowEnd - windowStart + 1)
-        print(maxLength)
+      
     }
     
     
